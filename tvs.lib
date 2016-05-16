@@ -1,0 +1,19 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# TVS_Small
+#
+DEF TVS_Small D 0 10 N N 1 F N
+F0 "D" -50 70 50 H V L CNN
+F1 "TVS_Small" -180 -70 50 H V L CNN
+F2 "" 0 100 50 V V C CNN
+F3 "" 0 0 50 V V C CNN
+DRAW
+P 3 0 1 0  0 30  0 -30  0 -20 N
+P 5 0 1 0  30 30  30 -30  -30 30  -30 -30  30 30 F
+X K 1 -100 0 70 R 50 50 1 1 P
+X A 2 100 0 70 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library
