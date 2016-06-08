@@ -16,7 +16,7 @@
   (pad 2 thru_hole circle (at 5 0) (size 2 2) (drill 1.1) (layers *.Cu *.Mask F.SilkS))
   (pad 3 thru_hole circle (at 10 0) (size 2 2) (drill 1.1) (layers *.Cu *.Mask F.SilkS))
   (pad 4 thru_hole circle (at 15 0) (size 2 2) (drill 1.1) (layers *.Cu *.Mask F.SilkS))
-  (model /home/tom/terminal.wrl
+  (model ${KIPRJMOD}/footprints.pretty/CTB1500-4.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
