@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/tom/sparkie/heimdall/heimdall.sch)
-    (date "Wed 08 Jun 2016 13:28:39 EDT")
+    (date "Wed 08 Jun 2016 14:30:29 EDT")
     (tool "Eeschema (2016-06-07 BZR 6893)-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -63,7 +63,7 @@
       (tstamp 5738AE1C))
     (comp (ref R1)
       (value 680R)
-      (footprint Resistors_SMD:R_1206)
+      (footprint Resistors_SMD:R_0603)
       (libsource (lib device) (part R_Small))
       (sheetpath (names /) (tstamps /))
       (tstamp 573AE1A8))
@@ -280,7 +280,6 @@
         (pin (num 10) (name VOS) (type input))
         (pin (num 11) (name ETP) (type power_in))))
     (libpart (lib tvs) (part TVS_Small)
-      (description TVS)
       (fields
         (field (name Reference) D)
         (field (name Value) TVS_Small))
@@ -294,12 +293,12 @@
       (uri /usr/share/kicad/library/conn.lib))
     (library (logical opto)
       (uri /usr/share/kicad/library/opto.lib))
-    (library (logical esp)
-      (uri /home/tom/sparkie/heimdall/hark-kicad/esp.lib))
     (library (logical tvs)
       (uri /home/tom/sparkie/heimdall/tvs.lib))
     (library (logical ti)
-      (uri /home/tom/sparkie/heimdall/hark-kicad/ti.lib)))
+      (uri /home/tom/sparkie/heimdall/hark-kicad/ti.lib))
+    (library (logical esp)
+      (uri /home/tom/sparkie/heimdall/hark-kicad/esp.lib)))
   (nets
     (net (code 1) (name /PWROUT)
       (node (ref Q1) (pin 2))
