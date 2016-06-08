@@ -1,0 +1,3 @@
+[submodule "hark-kicad"]
+	path = hark-kicad
+	url = git://git@github.com/HarkonenBade/hark-kicad.git

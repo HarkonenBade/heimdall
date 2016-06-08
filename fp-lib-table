@@ -1,3 +1,7 @@
 (fp_lib_table
-  (lib (name footprints)(type KiCad)(uri "$(KIPRJMOD)\\footprints.pretty")(options "")(descr ""))
+  (lib (name footprints)(type KiCad)(uri "$(KIPRJMOD)/footprints.pretty")(options "")(descr ""))
+  (lib (name esp)(type KiCad)(uri "$(KIPRJMOD)/hark-kicad/esp.pretty")(options "")(descr ""))
+  (lib (name Wurth)(type KiCad)(uri "$(KIPRJMOD)/hark-kicad/Wurth.pretty")(options "")(descr ""))
+  (lib (name Housing_WSON)(type KiCad)(uri "$(KIPRJMOD)/hark-kicad/Housing_WSON.pretty")(options "")(descr ""))
+  (lib (name Housings_SSOT)(type KiCad)(uri "$(KIPRJMOD)/hark-kicad/Housings_SSOT.pretty")(options "")(descr ""))
 )

@@ -1,4 +1,4 @@
-update=15/05/2016 18:02:17
+update=Tue 07 Jun 2016 22:29:26 EDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -58,5 +58,6 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=esp
-LibName31=tvs
+LibName30=tvs
+LibName31=hark-kicad/esp
+LibName32=hark-kicad/ti
