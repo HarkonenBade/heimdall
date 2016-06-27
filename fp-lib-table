@@ -4,4 +4,5 @@
   (lib (name Wurth)(type KiCad)(uri "$(KIPRJMOD)/hark-kicad/Wurth.pretty")(options "")(descr ""))
   (lib (name Housing_WSON)(type KiCad)(uri "$(KIPRJMOD)/hark-kicad/Housing_WSON.pretty")(options "")(descr ""))
   (lib (name Housings_SSOT)(type KiCad)(uri "$(KIPRJMOD)/hark-kicad/Housings_SSOT.pretty")(options "")(descr ""))
+  (lib (name agg)(type KiCad)(uri "$(KIPRJMOD)/agg-kicad/agg.pretty")(options "")(descr ""))
 )

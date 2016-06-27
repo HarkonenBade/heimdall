@@ -1,3 +1,6 @@
 [submodule "hark-kicad"]
 	path = hark-kicad
 	url = ssh://git@github.com/HarkonenBade/hark-kicad.git
+[submodule "agg-kicad"]
+	path = agg-kicad
+	url = https://github.com/adamgreig/agg-kicad

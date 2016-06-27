@@ -1,4 +1,4 @@
-update=Tue 07 Jun 2016 22:29:26 EDT
+update=18/06/2016 02:13:44
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,3 +61,4 @@ LibName29=valves
 LibName30=tvs
 LibName31=hark-kicad/esp
 LibName32=hark-kicad/ti
+LibName33=agg-kicad/agg-kicad
