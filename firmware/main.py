@@ -1,4 +1,5 @@
 import machine
+import webrepl
 
 import server
 
@@ -23,6 +24,7 @@ def handle(addr, meth, path):
     elif meth == "PUT":
         activate_switch()
         return 200, ""
+    webrepl.start()
     return 403, ""
 
 
