@@ -14,18 +14,20 @@ def do_http(handler, host="0.0.0.0", port=80):
     srv_sock.bind(addr)
     srv_sock.listen(5)
     while True:
-        cl, claddr = srv_sock.accept()
+        try:
+            cl, claddr = srv_sock.accept()
 
-        status_line = cl.readline().rstrip()
-        if status_line == "":
+            status_line = cl.readline().rstrip()
+            if status_line == "":
+                raise Exception
+            parts = status_line.split(" ")
+            if len(parts) != 3:
+                raise Exception
+            meth, path, http = parts
+            if http != "HTTP/1.1":
+                raise Exception
+            rsp_code, rsp = handler(claddr, meth, path)
+            send_rsp(cl, status_code=rsp_code, body=rsp)
+        except:
             send_rsp(cl, status_code=400)
-            cl.close()
-            continue
-        meth, path, http = status_line.split(" ")
-        if http != "HTTP/1.1":
-            send_rsp(cl, status_code=400)
-            cl.close()
-            continue
-        rsp_code, rsp = handler(claddr, meth, path)
-        send_rsp(cl, status_code=rsp_code, body=rsp)
         cl.close()
