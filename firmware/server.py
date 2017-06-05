@@ -5,6 +5,7 @@ def send_rsp(sock, status_code=200, body=""):
     sock.send("HTTP/1.1 ")
     sock.send(str(status_code))
     sock.send(" NA\r\n")
+    sock.send("Connection: close\r\n")
     sock.send("\r\n")
 
 
