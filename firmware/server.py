@@ -2,11 +2,12 @@ import usocket as socket
 
 
 def send_rsp(sock, status_code=200, body=""):
-    sock.send("HTTP/1.1 ")
-    sock.send(str(status_code))
-    sock.send(" NA\r\n")
-    sock.send("Connection: close\r\n")
-    sock.send("\r\n")
+    sock.write("HTTP/1.1 ")
+    sock.write(str(status_code))
+    sock.write(" NA\r\n")
+    sock.write("Connection: close\r\n")
+    sock.write("\r\n")
+    sock.write(body)
 
 
 def do_http(handler, host="0.0.0.0", port=80):
@@ -18,7 +19,7 @@ def do_http(handler, host="0.0.0.0", port=80):
         try:
             cl, claddr = srv_sock.accept()
 
-            status_line = cl.readline().rstrip()
+            status_line = cl.readline().decode("ascii").rstrip()
             if status_line == "":
                 raise Exception
             parts = status_line.split(" ")
