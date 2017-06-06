@@ -1,34 +1,39 @@
-import machine
-import webrepl
+#import machine
 
-import server
+from picoweb import WebApp, start_response
 
+app = WebApp(__name__)
 
-sw_pin = machine.Pin(0, machine.Pin.OUT)
-rst_time = machine.Timer(-1)
+#sw_pin = machine.Pin(0, machine.Pin.OUT)
+#rst_time = machine.Timer(-1)
 
 
 def activate_switch(hold=5000):
-    sw_pin.value(1)
-    rst_time.init(period=hold,
-                  mode=machine.Timer.ONE_SHOT,
-                  callback=lambda t: sw_pin.value(0))
+    print("SWON")
+    #sw_pin.value(1)
+    #rst_time.init(period=hold,
+    #              mode=machine.Timer.ONE_SHOT,
+    #              callback=lambda t: sw_pin.value(0))
 
 
-def handle(addr, meth, path):
-    if path == "/web":
-        webrepl.start()
-    elif path == "/active":
-        if meth == "GET":
-            rsp_val = str(sw_pin.value() == 1).lower()
-            return 200, '{"active": %s}' % rsp_val
-        elif meth == "PUT":
-            activate_switch()
-            return 200, ""
-        else:
-            return 403, ""
+@app.route("/rst")
+def rst(req, resp):
+    print("REBBOT")
+    #machine.reset()
+
+
+@app.route("/active")
+def active(req, resp):
+    if req.method == "GET":
+        #rsp_val = str(sw_pin.value() == 1).lower()
+        rsp_val = 'true'
+        yield from start_response(resp, "application/json")
+        yield from resp.awrite('{"active": %s}' % rsp_val)
+    elif req.method == "PUT":
+        activate_switch()
+        yield from start_response(resp, status="200")
     else:
-        return 404, ""
+        yield from start_response(resp, status="405")
 
 
-server.do_http(handle)
+app.run(debug=True, host="0.0.0.0", port=8080)

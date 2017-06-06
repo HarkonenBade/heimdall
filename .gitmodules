@@ -4,3 +4,9 @@
 [submodule "board/agg-kicad"]
 	path = board/agg-kicad
 	url = git@github.com:adamgreig/agg-kicad.git
+[submodule "firmware/picoweb-repo"]
+	path = firmware/picoweb-repo
+	url = https://github.com/pfalcon/picoweb.git
+[submodule "firmware/micropython-lib"]
+	path = firmware/micropython-lib
+	url = https://github.com/micropython/micropython-lib.git
